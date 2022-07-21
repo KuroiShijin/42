@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 10:04:13 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/21 05:43:11 by kdo              ###   ########lyon.fr   */
+/*   Created: 2022/07/21 01:28:18 by kdo               #+#    #+#             */
+/*   Updated: 2022/07/21 01:38:58 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int	ft_fibonacci(int index)
 {
-	unsigned int	j;
-	unsigned int	i;
-
-	i = 0;
-	j = 0;
-	while (src[j] != '\0' && j < (size - 1))
-	{
-		dest[j] = src[j];
-		j++;
-	}
-	while (src[i] != '\0')
-	{
-		i++;
-	}
-	dest[j] = '\0';
-	return (i);
+	if (index < 0)
+		return (-1);
+	else if (index < 2)
+		return (index);
+	else
+		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }

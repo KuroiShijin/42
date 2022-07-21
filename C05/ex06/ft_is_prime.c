@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 10:04:13 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/21 05:43:11 by kdo              ###   ########lyon.fr   */
+/*   Created: 2022/07/21 02:43:52 by kdo               #+#    #+#             */
+/*   Updated: 2022/07/21 03:06:30 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int	ft_is_prime(int nb)
 {
-	unsigned int	j;
-	unsigned int	i;
-
-	i = 0;
-	j = 0;
-	while (src[j] != '\0' && j < (size - 1))
-	{
-		dest[j] = src[j];
-		j++;
-	}
-	while (src[i] != '\0')
-	{
-		i++;
-	}
-	dest[j] = '\0';
-	return (i);
+    if (nb <= 1)
+        return (0);
+    else if (nb <= 3 || nb == 5 || nb == 7)
+        return (1);
+    else if ((nb %2 == 0) || (nb %3 == 0) || nb %5 == 0 || nb %7 == 0)
+        return (0);
+    else
+        return (1);
 }

@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 10:04:13 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/21 05:43:11 by kdo              ###   ########lyon.fr   */
+/*   Created: 2022/07/21 00:37:47 by kdo               #+#    #+#             */
+/*   Updated: 2022/07/21 01:06:14 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int	ft_iterative_power(int nb, int power)
 {
-	unsigned int	j;
-	unsigned int	i;
+	int	i;
 
-	i = 0;
-	j = 0;
-	while (src[j] != '\0' && j < (size - 1))
+	i = nb;
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	while (power > 1)
 	{
-		dest[j] = src[j];
-		j++;
+		nb *= i;
+		power--;
 	}
-	while (src[i] != '\0')
-	{
-		i++;
-	}
-	dest[j] = '\0';
-	return (i);
+	return (nb);
 }

@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 10:04:13 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/21 05:43:11 by kdo              ###   ########lyon.fr   */
+/*   Created: 2022/07/21 03:06:54 by kdo               #+#    #+#             */
+/*   Updated: 2022/07/21 03:13:56 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int ft_is_prime(int nb)
 {
-	unsigned int	j;
-	unsigned int	i;
+    if (nb <= 1)
+        return (0);
+    else if (nb <= 3 || nb == 5 || nb == 7)
+        return (1);
+    else if ((nb %2 == 0) || (nb %3 == 0) || nb %5 == 0 || nb %7 == 0)
+        return (0);
+    else
+        return (1);
+}
 
-	i = 0;
-	j = 0;
-	while (src[j] != '\0' && j < (size - 1))
-	{
-		dest[j] = src[j];
-		j++;
-	}
-	while (src[i] != '\0')
-	{
-		i++;
-	}
-	dest[j] = '\0';
-	return (i);
+int ft_find_next_prime(int nb)
+{
+    while (nb)
+    {
+        if (ft_is_prime(nb) == 1)
+            return (nb);
+		nb++;
+    }
 }
