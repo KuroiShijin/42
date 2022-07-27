@@ -6,7 +6,7 @@
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:27:33 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/28 00:48:27 by kdo              ###   ########lyon.fr   */
+/*   Updated: 2022/07/28 01:20:00 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,4 @@ void	ft_putnbr_base(int nbr, char *base)
 	}
 	if (ft_error(base, len_base))
 		ft_putnbr(nbr, len_base);
-}
-
-int	main(void)
-{
-	ft_putnbr_base(-2147483648, "0123456789ABCDEF");
-	return (0);
 }
