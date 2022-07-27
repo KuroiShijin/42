@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 11:17:16 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/28 00:21:12 by kdo              ###   ########lyon.fr   */
+/*   Created: 2022/07/25 14:40:42 by kdo               #+#    #+#             */
+/*   Updated: 2022/07/25 14:43:53 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
-{
-	int	i;
-	int	j;
+#ifndef FT_H
+# define FT_H
 
-	i = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	j = 0;
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		j++;
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
+
+#endif

@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 11:17:16 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/28 00:21:12 by kdo              ###   ########lyon.fr   */
+/*   Created: 2022/07/21 09:50:41 by kdo               #+#    #+#             */
+/*   Updated: 2022/07/26 14:02:01 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
-{
-	int	i;
-	int	j;
+#include <stdlib.h>
 
-	i = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	j = 0;
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		j++;
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+int	*ft_range(int min, int max)
+{
+	int	size;
+
+	size = max - min;
+
 }

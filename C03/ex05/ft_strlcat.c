@@ -6,11 +6,9 @@
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 17:04:59 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/19 17:17:18 by kdo              ###   ########lyon.fr   */
+/*   Updated: 2022/07/27 20:29:07 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <bsd/string.h>
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
@@ -31,10 +29,4 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	}
 	dest[i] = '\0';
 	return (i);
-}
-
-int	main(void)
-{
-	printf("%d\n", strlcat("bonjour", "test", 5));
-	printf("%d\n", ft_strlcat("bonjour", "test", 5));
 }

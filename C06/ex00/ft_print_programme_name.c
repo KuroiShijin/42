@@ -6,13 +6,13 @@
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:37:11 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/20 18:47:37 by kdo              ###   ########lyon.fr   */
+/*   Updated: 2022/07/25 14:33:04 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int	argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int	i;
 

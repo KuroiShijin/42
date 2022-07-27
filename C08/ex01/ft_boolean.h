@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 11:17:16 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/28 00:21:12 by kdo              ###   ########lyon.fr   */
+/*   Created: 2022/07/25 14:45:24 by kdo               #+#    #+#             */
+/*   Updated: 2022/07/26 13:49:59 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
-{
-	int	i;
-	int	j;
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
-	i = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	j = 0;
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		j++;
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
+# include <unistd.h>
+
+typedef int	t_bool;
+
+# define EVEN_MSG  "I have an even number of arguments."
+# define ODD_MSG  "I have an odd number of arguments."
+# define SUCCESS  0
+# define TRUE  0
+# define FALSE  1
+# define EVEN(i) i % 2 == 0
+
+#endif
