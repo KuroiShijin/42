@@ -6,7 +6,7 @@
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:27:33 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/25 14:30:04 by kdo              ###   ########lyon.fr   */
+/*   Updated: 2022/07/28 00:48:27 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ void	ft_putnbr(int nb, int base)
 	{
 		ft_all_base(nb);
 	}
-	/*else if (nb == -2147483648)
-	  {
-	  write(1, "-2147483648", 11);
-	  }*/
+	else if (nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+	}
 	else if (nb < 0)
 	{
 		ft_putchar('-');
@@ -97,6 +97,6 @@ void	ft_putnbr_base(int nbr, char *base)
 
 int	main(void)
 {
-	ft_putnbr_base(-2147483648, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+	ft_putnbr_base(-2147483648, "0123456789ABCDEF");
 	return (0);
 }
