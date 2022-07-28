@@ -6,7 +6,7 @@
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 19:16:13 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/28 09:27:22 by kdo              ###   ########lyon.fr   */
+/*   Updated: 2022/07/28 13:54:45 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,52 +22,45 @@ int	ft_strcmp(char *s1, char *s2)
 	return (*s1 - *s2);
 }
 
-int	sort(int argc, char **argv)
+void	sort(int argc, char **argv)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
+	char	*temp;
 
-
-	i = 0;
+	i = 1;
 	while (i < argc)
 	{
-		j = i + 1;
-		while (ft_strcmp(argv[i], argv[j]) > 0)
+		j = 1;
+		while (ft_strcmp(argv[j], argv[i]) > 0)
 		{
-					
+			temp = argv[i];
+			argv[i] = argv[j];
+			argv[j] = temp;
+			j++;
 		}
-	
+		i++;
 	}
 }
-
 
 int	main(int argc, char **argv)
 {
 	int		i;
 	int		j;
-	char	sort;
 
-	
-	sort = 33;
 	if (argc < 2)
 		return (0);
-	while (sort != 127)
+	sort(argc, argv);
+	i = 1;
+	while (argv[i])
 	{
-		i = 0;
-		while (argv[i])
+		j = 0;
+		while (argv[i][j])
 		{
-			j = 0;
-			if (argv[i][j] == sort)
-			{
-				while (argv[i][j])
-				{
-					write(1, &argv[i][j], 1);
-					j++;
-				}
-				write(1, "\n", 1);
-			}
-			i++;
+			write(1, &argv[i][j], 1);
+			j++;
 		}
-		sort++;
+		i++;
+		write(1, "\n", 1);
 	}
 }
