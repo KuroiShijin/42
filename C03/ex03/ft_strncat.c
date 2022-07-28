@@ -6,22 +6,22 @@
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 11:26:46 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/18 10:21:22 by kdo              ###   ########lyon.fr   */
+/*   Updated: 2022/07/28 02:19:44 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	i;
-	int				j;
+	unsigned int	j;
 
 	i = 0;
-	while (dest[i] != '\0')
+	while (dest[i])
 	{
 		i++;
 	}
 	j = 0;
-	while (src[j] != '\0' && i < nb)
+	while (src[j] && (j < nb))
 	{
 		dest[i] = src[j];
 		j++;

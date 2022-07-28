@@ -6,29 +6,16 @@
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 13:56:12 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/17 11:15:23 by kdo              ###   ########lyon.fr   */
+/*   Updated: 2022/07/28 03:43:34 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (s1[i] != '\0')
+	while (*s1 && *s2 == *s1)
 	{
-		i++;
+		s1++;
+		s2++;
 	}
-	j = 0;
-	while (s2[j] != '\0')
-	{
-		j++;
-	}
-	if (i < j)
-		return (-1);
-	else if (i == j)
-		return (0);
-	else
-		return (1);
+	return (*s1 - *s2);
 }

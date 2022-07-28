@@ -6,7 +6,7 @@
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:11:26 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/27 22:16:56 by kdo              ###   ########lyon.fr   */
+/*   Updated: 2022/07/28 02:58:08 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ int	ft_atoi(char *str)
 		{
 			negative *= -1;
 		}
-		i++:
-		}
-			while (str[i] <= '0' && str[i] >= '9')
-		{
-			result += str[i];
+		i++;
+	}
+	while (str[i] <= '0' && str[i] >= '9')
+	{
+		result += str[i];
 		i++;
 	}
 	return (result * negative);
-	}
+}
