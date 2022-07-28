@@ -6,18 +6,23 @@
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 01:39:12 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/21 02:40:55 by kdo              ###   ########lyon.fr   */
+/*   Updated: 2022/07/28 06:45:34 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_sqrt(int nb)
 {
-	int	i;
+	long int	sqrt;
 
-	i = nb;
-	while ((i - nb / i) > 0.00001)
+	sqrt = 1;
+	if (nb > 0)
 	{
-		i = (i + nb / i) / 2;
+		while (sqrt * sqrt < nb)
+		{
+			sqrt++;
+		}
+		if (sqrt * sqrt == nb)
+			return (sqrt);
 	}
-	return (i);
+	return (0);
 }
