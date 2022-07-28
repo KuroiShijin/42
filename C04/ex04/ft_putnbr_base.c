@@ -6,91 +6,71 @@
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:27:33 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/28 04:30:25 by kdo              ###   ########lyon.fr   */
+/*   Updated: 2022/07/28 09:40:59 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
 
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_all_base(int nb)
-{
-	char	c;
-	int		n;
-
-	n = 10;
-	c = 'A';
-	if (nb <= 9)
-		ft_putchar(nb + '0');
-	while (nb > 9 && n <= 36)
-	{
-		if (nb == n)
-			ft_putchar(c);
-		c++;
-		n++;
-	}
-}
-
-void	ft_putnbr(int nb, int base)
-{
-	if (nb >= 0 && nb < base)
-	{
-		ft_all_base(nb);
-	}
-	else if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-	}
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(nb * (-1), base);
-	}
-	else
-	{
-		ft_putnbr(nb / base, base);
-		ft_putnbr(nb % base, base);
-	}
-}
-
-int	ft_error(char *base, int len_base)
+int	ft_error(char *str)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	if (len_base <= 1)
-		return (1);
-	while (base[i])
+	if (ft_strlen(str) < 2)
+		return (0);
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (base[i] == '+' || base[i] == '-')
-			return (1);
-		j = 0;
-		while (base[i + j])
+		if (str[i] == '-' || str[i] == '+')
+			return (0);
+		j = i + 1;
+		while (str[j] != '\0')
 		{
-			if (base[i + j] == base[j])
-				return (1);
+			if (str[j] == str[i])
+				return (0);
 			j++;
 		}
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int	len_base;
+	int	lbase;
 
-	len_base = 0;
-	while (base[len_base])
+	lbase = ft_strlen(base);
+	if (ft_error(base) == 0)
+		return ;
+	if (nbr < 0)
 	{
-		len_base++;
+		ft_putchar('-');
+		ft_putnbr_base(nbr * (-1), base);
 	}
-	if (!ft_error(base, len_base))
-		ft_putnbr(nbr, len_base);
+	else if (nbr >= lbase)
+	{
+		ft_putnbr_base(nbr / lbase, base);
+		ft_putnbr_base(nbr % lbase, base);
+	}
+	else
+		ft_putchar(base[nbr]);
 }

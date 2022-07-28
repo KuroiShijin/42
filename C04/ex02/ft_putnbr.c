@@ -6,7 +6,7 @@
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:01:37 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/18 14:11:08 by kdo              ###   ########lyon.fr   */
+/*   Updated: 2022/07/28 09:40:09 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ void	ft_putnbr(int nb)
 	else if (nb < 0)
 	{
 		ft_putchar('-');
-		ft_putchar(nb * (-1));
+		ft_putnbr(nb * (-1));
 	}
 	else
 	{
 		ft_putnbr(nb / 10);
-		ft_putchar(nb % 10);
+		ft_putnbr(nb % 10);
 	}
 }
