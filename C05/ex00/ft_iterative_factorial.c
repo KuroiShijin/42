@@ -6,20 +6,25 @@
 /*   By: kdo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 23:20:19 by kdo               #+#    #+#             */
-/*   Updated: 2022/07/20 23:30:26 by kdo              ###   ########lyon.fr   */
+/*   Updated: 2022/07/28 17:43:44 by kdo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_iterative_factorial(int nb)
 {
 	int	res;
+	int	i;
 
-	res = nb;
-	if (nb <= 0)
+	res = 1;
+	i = 1;
+	if (!nb)
+		return (1);
+	if (nb < 0)
 		return (0);
-	while (--nb)
+	while (i <= nb)
 	{
-		res *= nb;
+		res *= i;
+		i++;
 	}
 	return (res);
 }
